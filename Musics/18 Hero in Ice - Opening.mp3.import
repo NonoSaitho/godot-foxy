@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/18 Hero in Ice - Opening.mp3-d212b38d4326e18fdfa2d312fb72c324.mp3str"
+
+[deps]
+
+source_file="res://Musics/18 Hero in Ice - Opening.mp3"
+dest_files=[ "res://.import/18 Hero in Ice - Opening.mp3-d212b38d4326e18fdfa2d312fb72c324.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

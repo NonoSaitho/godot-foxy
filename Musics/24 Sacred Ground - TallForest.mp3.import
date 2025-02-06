@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/24 Sacred Ground - TallForest.mp3-685d68d050952fd432de95ce43b03ec2.mp3str"
+
+[deps]
+
+source_file="res://Musics/24 Sacred Ground - TallForest.mp3"
+dest_files=[ "res://.import/24 Sacred Ground - TallForest.mp3-685d68d050952fd432de95ce43b03ec2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

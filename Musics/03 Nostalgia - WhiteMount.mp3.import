@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/03 Nostalgia - WhiteMount.mp3-a4123d298c2be6d60c77ec2be462133c.mp3str"
+
+[deps]
+
+source_file="res://Musics/03 Nostalgia - WhiteMount.mp3"
+dest_files=[ "res://.import/03 Nostalgia - WhiteMount.mp3-a4123d298c2be6d60c77ec2be462133c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

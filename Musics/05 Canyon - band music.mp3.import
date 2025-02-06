@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/05 Canyon - band music.mp3-e24d3a3e635e5b9f4ce593e5a640df1f.mp3str"
+
+[deps]
+
+source_file="res://Musics/05 Canyon - band music.mp3"
+dest_files=[ "res://.import/05 Canyon - band music.mp3-e24d3a3e635e5b9f4ce593e5a640df1f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

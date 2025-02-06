@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/13 Field 1 - GreenHill.mp3-9027c5c47e3eab5f6168064fab1f71b2.mp3str"
+
+[deps]
+
+source_file="res://Musics/13 Field 1 - GreenHill.mp3"
+dest_files=[ "res://.import/13 Field 1 - GreenHill.mp3-9027c5c47e3eab5f6168064fab1f71b2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

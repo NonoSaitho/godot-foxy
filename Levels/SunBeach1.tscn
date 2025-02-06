@@ -1,0 +1,608 @@
+[gd_scene load_steps=84 format=2]
+
+[ext_resource path="res://GameElmnts/FoxyGDTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://GameElmnts/Foxy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameElmnts/teleports/TeleporterWide.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameElmnts/WaterBody1.gd" type="Script" id=4]
+[ext_resource path="res://GameElmnts/Level.tscn" type="PackedScene" id=5]
+[ext_resource path="res://img/Poof.png" type="Texture" id=6]
+[ext_resource path="res://GameElmnts/teleports/Teleporter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://img/seeWaves.png" type="Texture" id=8]
+[ext_resource path="res://GameElmnts/clouds.gd" type="Script" id=9]
+[ext_resource path="res://img/Backgrounds/Clouds.png" type="Texture" id=10]
+[ext_resource path="res://Sounds/plouf.wav" type="AudioStream" id=11]
+[ext_resource path="res://img/Mermaidz.png" type="Texture" id=12]
+[ext_resource path="res://img/Clam.png" type="Texture" id=13]
+[ext_resource path="res://Levels/ClamArea.gd" type="Script" id=14]
+[ext_resource path="res://Levels/SunBeach1.gd" type="Script" id=15]
+[ext_resource path="res://Levels/Mermaid.gd" type="Script" id=16]
+[ext_resource path="res://GameElmnts/Talking_area.gd" type="Script" id=17]
+[ext_resource path="res://Sounds/item get old.wav" type="AudioStream" id=18]
+[ext_resource path="res://Sounds/mermaid.wav" type="AudioStream" id=19]
+[ext_resource path="res://img/Items/items.png" type="Texture" id=20]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 177.6, 44.8 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 40, 32, 40 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 40, 32, 40 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 40, 32, 40 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 6 )
+region = Rect2( 96, 40, 32, 40 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 80, 32, 40 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": false,
+"name": "splash",
+"speed": 9.0
+} ]
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 16, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 32, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 48, 64, 16 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "wave",
+"speed": 4.0
+} ]
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=34]
+animations = [ {
+"frames": [ SubResource( 33 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 10.6, 3.69999 )
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 11.5, 3.50001 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 12 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 12 )
+region = Rect2( 96, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 12 )
+region = Rect2( 128, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 12 )
+region = Rect2( 160, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 12 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 12 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 12 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 12 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 12 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 12 )
+region = Rect2( 96, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 12 )
+region = Rect2( 128, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 12 )
+region = Rect2( 160, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=43]
+animations = [ {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "Barmaid",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "Entrence",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 20 )
+region = Rect2( 32, 80, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 80, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 20 )
+region = Rect2( 16, 112, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 112, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 20 )
+region = Rect2( 16, 96, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 20 )
+region = Rect2( 32, 112, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 20 )
+region = Rect2( 16, 80, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 20 )
+region = Rect2( 16, 64, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 20 )
+region = Rect2( 16, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 20 )
+region = Rect2( 32, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 20 )
+region = Rect2( 16, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 20 )
+region = Rect2( 32, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 20 )
+region = Rect2( 32, 64, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 20 )
+region = Rect2( 16, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 64, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 20 )
+region = Rect2( 32, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 20 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 128, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 20 )
+region = Rect2( 16, 128, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 20 )
+region = Rect2( 32, 128, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 20 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=66]
+animations = [ {
+"frames": [ SubResource( 45 ) ],
+"loop": true,
+"name": "Box",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 46 ) ],
+"loop": true,
+"name": "BrokenHourglass",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 47 ) ],
+"loop": true,
+"name": "Check",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 65 ) ],
+"loop": true,
+"name": "CheckBox",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 48 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 48 ), SubResource( 17 ) ],
+"loop": true,
+"name": "Cheer",
+"speed": 4.0
+}, {
+"frames": [ SubResource( 49 ) ],
+"loop": true,
+"name": "Cocktail",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 50 ) ],
+"loop": true,
+"name": "Excl",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 51 ) ],
+"loop": true,
+"name": "Guitare",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 52 ) ],
+"loop": true,
+"name": "Hot",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 53 ) ],
+"loop": true,
+"name": "Hourglass",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 54 ) ],
+"loop": true,
+"name": "Ice",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 55 ), SubResource( 56 ) ],
+"loop": true,
+"name": "Igloo",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 57 ) ],
+"loop": true,
+"name": "NoMusic",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 58 ) ],
+"loop": true,
+"name": "Question",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 59 ) ],
+"loop": true,
+"name": "Sand",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 31 ) ],
+"loop": true,
+"name": "Shovel",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 32 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 32 ) ],
+"loop": true,
+"name": "Speachless",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 63 ) ],
+"loop": true,
+"name": "String",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 64 ) ],
+"loop": true,
+"name": "Talk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 30.4, 19.4 )
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 5, 5 )
+script = ExtResource( 15 )
+
+[node name="Level" parent="." instance=ExtResource( 5 )]
+size_x = 3200
+size_y = 1360
+music = "GreenHill"
+
+[node name="TileMap" type="TileMap" parent="Level"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -589784, 63, 0, -524248, 63, 0, -458712, 63, 0, -393176, 63, 0, -262145, 5, 0, -327640, 63, 0, -196609, 5, 0, -262104, 63, 0, -131073, 5, 0, -196568, 63, 0, -65537, 5, 0, -131032, 63, 0, -1, 5, 0, -65496, 63, 0, 65535, 5, 0, 40, 63, 0, 131071, 5, 0, 65576, 63, 0, 196607, 5, 0, 131112, 63, 0, 262143, 5, 0, 196648, 63, 0, 327679, 5, 0, 262184, 63, 0, 393215, 5, 0, 327720, 63, 0, 458751, 5, 0, 393256, 63, 0, 524287, 5, 0, 458792, 63, 0, 589823, 5, 0, 524328, 63, 0, 655359, 5, 0, 589864, 63, 0, 720895, 5, 0, 655400, 63, 0, 786431, 8, 0, 720896, 1, 0, 720897, 1, 0, 720898, 1, 0, 720899, 23, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720906, 67, 0, 720907, 61, 0, 720908, 61, 0, 720909, 61, 0, 720910, 61, 0, 720911, 61, 0, 720912, 61, 0, 720913, 62, 0, 720936, 63, 0, 851967, 4, 0, 786432, 4, 0, 786433, 4, 0, 786434, 4, 0, 786435, 4, 0, 786436, 4, 0, 786437, 4, 0, 786438, 4, 0, 786439, 4, 0, 786440, 4, 0, 786441, 4, 0, 786442, 69, 0, 786443, 64, 0, 786444, 64, 0, 786445, 64, 0, 786446, 64, 0, 786447, 64, 0, 786448, 64, 0, 786449, 65, 0, 786472, 63, 0, 917503, 4, 0, 851968, 4, 0, 851969, 4, 0, 851970, 4, 0, 851971, 4, 0, 851972, 4, 0, 851973, 4, 0, 851974, 4, 0, 851975, 4, 0, 851976, 4, 0, 851977, 4, 0, 851978, 69, 0, 851979, 64, 0, 851980, 64, 0, 851981, 64, 0, 851982, 64, 0, 851983, 64, 0, 851984, 64, 0, 851985, 65, 0, 852008, 63, 0, 983039, 4, 0, 917504, 4, 0, 917505, 4, 0, 917506, 4, 0, 917507, 4, 0, 917508, 4, 0, 917509, 4, 0, 917510, 4, 0, 917511, 4, 0, 917512, 4, 0, 917513, 4, 0, 917514, 69, 0, 917515, 64, 0, 917516, 64, 0, 917517, 64, 0, 917518, 64, 0, 917519, 64, 0, 917520, 64, 0, 917521, 65, 0, 917544, 63, 0, 1048575, 4, 0, 983040, 4, 0, 983041, 4, 0, 983042, 4, 0, 983043, 4, 0, 983044, 4, 0, 983045, 4, 0, 983046, 4, 0, 983047, 4, 0, 983048, 4, 0, 983049, 4, 0, 983050, 69, 0, 983051, 64, 0, 983052, 64, 0, 983053, 64, 0, 983054, 64, 0, 983055, 64, 0, 983056, 64, 0, 983057, 65, 0, 983080, 63, 0, 1114111, 4, 0, 1048576, 4, 0, 1048577, 4, 0, 1048578, 4, 0, 1048579, 4, 0, 1048580, 4, 0, 1048581, 4, 0, 1048582, 4, 0, 1048583, 4, 0, 1048584, 4, 0, 1048585, 4, 0, 1048586, 69, 0, 1048587, 64, 0, 1048588, 64, 0, 1048589, 64, 0, 1048590, 64, 0, 1048591, 64, 0, 1048592, 64, 0, 1048593, 65, 0, 1048616, 63, 0, 1179647, 4, 0, 1114112, 4, 0, 1114113, 4, 0, 1114114, 4, 0, 1114115, 4, 0, 1114116, 4, 0, 1114117, 4, 0, 1114118, 4, 0, 1114119, 4, 0, 1114120, 4, 0, 1114121, 4, 0, 1114122, 69, 0, 1114123, 64, 0, 1114124, 64, 0, 1114125, 64, 0, 1114126, 64, 0, 1114127, 64, 0, 1114128, 64, 0, 1114129, 65, 0, 1114152, 63, 0 )
+
+[node name="WaterBody1" type="Area2D" parent="Level"]
+position = Vector2( 462.4, 238 )
+z_index = 2
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/WaterBody1"]
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Level/WaterBody1"]
+light_mask = 16
+margin_left = -178.0
+margin_top = -44.0
+margin_right = 181.0
+margin_bottom = 50.0
+color = Color( 0.133333, 0.223529, 0.796078, 1 )
+
+[node name="splash" type="AnimatedSprite" parent="Level/WaterBody1"]
+position = Vector2( 211.2, -1.20006 )
+z_index = 3
+frames = SubResource( 7 )
+animation = "splash"
+frame = 4
+playing = true
+
+[node name="plouf" type="AudioStreamPlayer" parent="Level/WaterBody1"]
+stream = ExtResource( 11 )
+volume_db = 5.0
+
+[node name="Foxy" parent="Level" instance=ExtResource( 2 )]
+position = Vector2( 222.4, 145.6 )
+
+[node name="PortalToGreen" parent="Level" instance=ExtResource( 7 )]
+position = Vector2( -5.4, 145.6 )
+to_scene = "res://Levels/GreenHill2.tscn"
+to_x = 630
+to_y = 145
+
+[node name="PortalWide" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 312, 283.2 )
+to_scene = "res://Levels/SunBeach1.tscn"
+to_x = 222
+to_y = 125
+
+[node name="PortalWide2" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 361.6, 283.2 )
+to_scene = "res://Levels/SunBeach1.tscn"
+to_x = 222
+to_y = 125
+
+[node name="PortalWide3" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 411.2, 283.2 )
+to_scene = "res://Levels/SunBeach1.tscn"
+to_x = 222
+to_y = 125
+
+[node name="PortalWide4" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 461.4, 283.2 )
+to_scene = "res://Levels/SunBeach1.tscn"
+to_x = 222
+to_y = 125
+
+[node name="PortalWide5" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 511.6, 283.2 )
+to_scene = "res://Levels/SunBeach1.tscn"
+to_x = 222
+to_y = 125
+
+[node name="PortalWide6" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 561.2, 283.2 )
+to_scene = "res://Levels/SunBeach1.tscn"
+to_x = 222
+to_y = 125
+
+[node name="PortalWide7" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 611.4, 283.2 )
+to_scene = "res://Levels/SunBeach1.tscn"
+to_x = 222
+to_y = 125
+
+[node name="animated sea" type="Node" parent="Level"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Level/animated sea"]
+position = Vector2( 1582, 930 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 11 )
+animation = "wave"
+frame = 3
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Level/animated sea"]
+position = Vector2( 1902, 930 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 11 )
+animation = "wave"
+frame = 3
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Level/animated sea"]
+position = Vector2( 2222, 930 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 11 )
+animation = "wave"
+frame = 3
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Level/animated sea"]
+position = Vector2( 2542, 930 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 11 )
+animation = "wave"
+frame = 3
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Level/animated sea"]
+position = Vector2( 2862, 930 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 11 )
+animation = "wave"
+frame = 3
+playing = true
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Level/animated sea"]
+position = Vector2( 3182, 930 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 11 )
+animation = "wave"
+frame = 3
+playing = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Level"]
+
+[node name="clouds" type="ParallaxLayer" parent="Level/ParallaxBackground"]
+motion_mirroring = Vector2( 1280, 0 )
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Level/ParallaxBackground/clouds"]
+position = Vector2( 624.5, 583 )
+texture = ExtResource( 10 )
+
+[node name="Clam" type="KinematicBody2D" parent="Level"]
+position = Vector2( 314, 207 )
+
+[node name="ClamSpr" type="AnimatedSprite" parent="Level/Clam"]
+position = Vector2( 15.6, 16.6 )
+frames = SubResource( 34 )
+animation = "idle"
+
+[node name="ClamArea" type="Area2D" parent="Level/Clam/ClamSpr"]
+script = ExtResource( 14 )
+
+[node name="ClamInterract" type="CollisionShape2D" parent="Level/Clam/ClamSpr/ClamArea"]
+position = Vector2( 0.399975, 6.29999 )
+shape = SubResource( 35 )
+disabled = true
+
+[node name="ClamGround" type="CollisionShape2D" parent="Level/Clam"]
+position = Vector2( 16.1, 24.2999 )
+shape = SubResource( 36 )
+disabled = true
+
+[node name="Mermaid" type="AnimatedSprite" parent="Level"]
+position = Vector2( 332, 208 )
+frames = SubResource( 43 )
+animation = "Entrence"
+frame = 5
+playing = true
+flip_h = true
+script = ExtResource( 16 )
+
+[node name="ClamSpr" type="AnimatedSprite" parent="Level/Mermaid"]
+position = Vector2( 0.00021553, 9.00009 )
+z_index = -1
+frames = SubResource( 34 )
+animation = "idle"
+
+[node name="item" type="AudioStreamPlayer2D" parent="Level/Mermaid"]
+position = Vector2( -44.4, -96.6 )
+stream = ExtResource( 18 )
+
+[node name="mermaidSound" type="AudioStreamPlayer2D" parent="Level/Mermaid"]
+stream = ExtResource( 19 )
+
+[node name="talk_box" type="AnimatedSprite" parent="Level/Mermaid"]
+visible = false
+position = Vector2( -15, -15 )
+z_index = 1
+frames = SubResource( 66 )
+animation = "Cheer"
+frame = 5
+playing = true
+
+[node name="talking_area" type="Area2D" parent="Level"]
+position = Vector2( 214.2, 163 )
+script = ExtResource( 17 )
+talkingNode = NodePath("../Mermaid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/talking_area"]
+position = Vector2( 32, -6.40001 )
+shape = SubResource( 44 )
+
+[connection signal="body_entered" from="Level/WaterBody1" to="Level/WaterBody1" method="_on_WaterBody1_body_entered"]
+[connection signal="body_entered" from="Level/Clam/ClamSpr/ClamArea" to="Level/Clam/ClamSpr/ClamArea" method="_on_ClamArea_body_entered"]

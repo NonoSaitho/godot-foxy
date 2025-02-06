@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/11 Plot - UnderCaves.mp3-4b687cb087ef8270dba4c1368efbc263.mp3str"
+
+[deps]
+
+source_file="res://Musics/11 Plot - UnderCaves.mp3"
+dest_files=[ "res://.import/11 Plot - UnderCaves.mp3-4b687cb087ef8270dba4c1368efbc263.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
