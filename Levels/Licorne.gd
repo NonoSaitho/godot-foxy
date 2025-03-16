@@ -59,6 +59,12 @@ func play_give_sand():
 	$subject.visible = false
 	$mark.visible = false
 	
+	$give.position = Vector2(52, -20)
+	$give.play("Sand")
+	$give.visible = true
+	yield(get_tree().create_timer(2.0), "timeout")
+	$give.visible = false
+	
 	$joy.visible = true
 	self.play("cheer")
 	Pause.get_item("Sand")
@@ -81,6 +87,13 @@ func play_get_hair():
 	$bubble.visible = false
 	$mark.visible = false
 	$subject.visible = false
+	
+	$give.position = Vector2(25, -10)
+	$give.play("String")
+	$give.visible = true
+	yield(get_tree().create_timer(2.0), "timeout")
+	$give.visible = false
+	
 	Pause.get_item("String")
 	get_parent().get_node("Foxy/FoxySprite").play("Bark")
 	yield(get_tree().create_timer(3.5), "timeout")
@@ -92,3 +105,12 @@ func play_joy():
 	yield(get_tree().create_timer(2.2), "timeout")
 	$joy.visible = false
 	self.play("idle")
+
+func _process(delta):
+	if $give.visible:
+		if $give.animation == "Sand" :
+			$give.position.x -= delta*15
+			$give.position.y = -20 + (sqrt(pow(30-$give.position.x, 2)))
+		elif $give.animation == "String" :
+			$give.position.x += delta*15
+			$give.position.y = -20 + (sqrt(pow(38-$give.position.x, 2)))

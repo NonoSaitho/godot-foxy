@@ -59,6 +59,12 @@ func play_give_ice():
 	$subject.visible = false
 	$mark.visible = false
 	
+	$give.position = Vector2(-35, -2)
+	$give.play("Ice")
+	$give.visible = true
+	yield(get_tree().create_timer(1.5), "timeout")
+	$give.visible = false
+	
 	$joy.visible = true
 	$mermaidSound.play()
 	Pause.get_item("Ice")
@@ -77,6 +83,13 @@ func play_get_sand():
 	$bubble.visible = false
 	$mark.visible = false
 	$subject.visible = false
+	
+	$give.position = Vector2(-15, -2)
+	$give.play("Sand")
+	$give.visible = true
+	yield(get_tree().create_timer(1.5), "timeout")
+	$give.visible = false
+	
 	Pause.get_item("Sand")
 	get_parent().get_node("Foxy/FoxySprite").play("Bark")
 	yield(get_tree().create_timer(3.5), "timeout")
@@ -101,3 +114,12 @@ func play_conversation():
 	$mark.visible = false
 	
 	get_parent().get_node("talking_area").get_node("CollisionShape2D").disabled = false
+
+func _process(delta):
+	if $give.visible:
+		if $give.animation == "Sand" :
+			$give.position.x -= delta*15
+			$give.position.y = -10 + (sqrt(pow(-24-$give.position.x, 2)))
+		elif $give.animation == "Ice" :
+			$give.position.x += delta*15
+			$give.position.y = -10 + (sqrt(pow(-24-$give.position.x, 2)))

@@ -490,7 +490,7 @@ position = Vector2( 1582, 930 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 11 )
 animation = "wave"
-frame = 3
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Level/animated sea"]
@@ -498,7 +498,7 @@ position = Vector2( 1902, 930 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 11 )
 animation = "wave"
-frame = 3
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Level/animated sea"]
@@ -506,7 +506,7 @@ position = Vector2( 2222, 930 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 11 )
 animation = "wave"
-frame = 3
+frame = 2
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Level/animated sea"]
@@ -514,7 +514,7 @@ position = Vector2( 2542, 930 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 11 )
 animation = "wave"
-frame = 3
+frame = 2
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Level/animated sea"]
@@ -522,7 +522,7 @@ position = Vector2( 2862, 930 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 11 )
 animation = "wave"
-frame = 3
+frame = 2
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="Level/animated sea"]
@@ -530,7 +530,7 @@ position = Vector2( 3182, 930 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 11 )
 animation = "wave"
-frame = 3
+frame = 2
 playing = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Level"]
@@ -568,7 +568,7 @@ disabled = true
 position = Vector2( 332, 208 )
 frames = SubResource( 43 )
 animation = "Entrence"
-frame = 5
+frame = 4
 playing = true
 flip_h = true
 script = ExtResource( 16 )
@@ -592,11 +592,11 @@ position = Vector2( -15, -15 )
 z_index = 1
 frames = SubResource( 66 )
 animation = "Cheer"
-frame = 5
+frame = 4
 playing = true
 
 [node name="talking_area" type="Area2D" parent="Level"]
-position = Vector2( 214.2, 163 )
+position = Vector2( 221, 163 )
 script = ExtResource( 17 )
 talkingNode = NodePath("../Mermaid")
 

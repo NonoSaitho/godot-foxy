@@ -93,6 +93,18 @@ func exit():
 	get_tree().change_scene("res://Levels/Title.tscn")
 	GlobalScene.pausable = false
 	pause(false)
+	GlobalScene.ice = 0
+	$ItemIceBox/ItemIce.visible = false
+	$ItemIceBox/ItemIceOK.visible = false
+	GlobalScene.shovel = 0
+	$ItemShovelBox/ItemShovel.visible = false
+	$ItemShovelBox/ItemShovelOK.visible = false
+	GlobalScene.hair = 0
+	$ItemStringBox/ItemString.visible = false
+	$ItemStringBox/ItemStringOK.visible = false
+	GlobalScene.sand = 0
+	$ItemSandBox/ItemSand.visible = false
+	$ItemSandBox/ItemSandOK.visible = false
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel") && GlobalScene.pausable && !GlobalScene.isCutScene :

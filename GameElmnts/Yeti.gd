@@ -67,6 +67,12 @@ func play_give_shovel():
 	$subject.visible = false
 	$mark.visible = false
 	
+	$give.position = Vector2(-30, -1)
+	$give.play("Shovel")
+	$give.visible = true
+	yield(get_tree().create_timer(1.5), "timeout")
+	$give.visible = false
+	
 	$joy.visible = true
 	$AnimatedSprite.play("joy")
 	$grunt.play()
@@ -92,6 +98,13 @@ func play_get_ice():
 	$mark.visible = false
 	$subject.visible = false
 	$bubble.visible = false
+	
+	$give.position = Vector2(-9, -1)
+	$give.play("Ice")
+	$give.visible = true
+	yield(get_tree().create_timer(1.5), "timeout")
+	$give.visible = false
+	
 	Pause.get_item("Ice")
 	get_parent().get_node("Foxy/FoxySprite").play("Bark")
 	yield(get_tree().create_timer(3.5), "timeout")
@@ -129,7 +142,6 @@ func spawnSnowball(toss_val, toss_side):
 	timer.set_wait_time(5)
 	timer.start()
 	$throw_ball.play()
-	print("child count = ", self.get_child_count())
 
 func _process(delta):
 	if $AnimatedSprite.animation == "juggling":
@@ -138,14 +150,17 @@ func _process(delta):
 			throw_new_ball = 1
 			spawnSnowball(tossing_array.pop_front(), toss_side)
 			toss_side = !toss_side
-			## print("toss !")
 			if tossing_array.size() == 0 :
-				## print("refurnish tossing array")
 				tossing_array.append_array(TOSSING_ARRAY_REF)
 				## randomiser
 				tossing_array.shuffle()
 				tossing_array.pop_front()
 				tossing_array.pop_front()
-				## print("tossing array : ", tossing_array)
 		
-		
+	if $give.visible:
+		if $give.animation == "Ice" :
+			$give.position.x -= delta*15
+			$give.position.y = -10 + (sqrt(pow(-15-$give.position.x, 2)))
+		elif $give.animation == "Shovel" :
+			$give.position.x += delta*15
+			$give.position.y = -10 + (sqrt(pow(-15-$give.position.x, 2)))

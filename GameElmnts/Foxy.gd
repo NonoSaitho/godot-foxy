@@ -74,7 +74,6 @@ func spawnPoof():
 	timer.connect("timeout", poofy, "queue_free")
 	timer.set_wait_time(2)
 	timer.start()
-	print("child count = ", get_parent().get_child_count())
 
 func set_cutscene(boolean):
 	cut_scene = boolean
@@ -83,7 +82,6 @@ func getHit(silence):
 	if !silence:
 		$Hit.play()
 	if ouch_tic == 0:
-		print("i'm hit")
 		ouch_tic = 0.5
 		$CollisionShape.disabled = true
 		actionnable = false
@@ -138,7 +136,6 @@ func drift(delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	##print("1. motion : ", motion)
 	update_tail()
 	
 	motion.y += GRAVITY*delta
@@ -147,13 +144,9 @@ func _process(delta):
 		blink()
 		ouch_tic -= delta
 		if ouch_tic <= 0 :
-			print("end of ouch_tic !")
 			ouch_tic = 0
 			if $FoxySprite.animation != "Ouch":
-				print("end of invincibility !")
 				self.modulate.a = 1.0
-			else :
-				print("little bit of invincibility !")
 	
 	if actionnable && !cut_scene:
 		## Barking
@@ -162,11 +155,6 @@ func _process(delta):
 				$FoxySprite.play("Bark")
 				actionnable = false
 				var val = "True" if cut_scene else "False"
-				print("cut scene is at "+val)
-				print("Bark !")
-#				for body in $Area2D.get_overlapping_bodies():
-#					if body.has_method("interact"):
-#						body.interact()
 				for area in $talk.get_overlapping_areas():
 					if area.has_method("call_talk") and !cut_scene :
 						area.call_talk()
@@ -213,7 +201,6 @@ func _process(delta):
 		elif second_jump:
 			if Input.is_action_just_pressed("ui_up"):
 				second_jump = false
-				print("double jump !!")
 				motion.y = JUMP_DOUBLE
 				$FoxySprite.play("Jump")
 				$Jump.play()
@@ -228,7 +215,6 @@ func _process(delta):
 				motion.y -= GRAVITY*delta
 			tic -= delta ## keep jumping
 			if Input.is_action_just_released("ui_up"):
-				print("reset tic at", tic)
 				tic = 0 ## stop jumping
 		
 	else :
@@ -237,13 +223,11 @@ func _process(delta):
 			if $FoxySprite.frame == 4:
 				# animation end
 				reactionnable()
-				print("bark end")
 		elif $FoxySprite.animation == "Ouch":
 			if ouch_tic == 0 :
 				ouch_tic = 0.5
 				$CollisionShape.disabled = false
 				reactionnable()
-				print("ouch end")
 	
 	## limit speed
 	if motion.x > MAX_SPEED:

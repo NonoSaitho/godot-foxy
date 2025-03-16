@@ -26,6 +26,5 @@ func _process(delta):
 	## safety net in WhiteMountain levels ith snowballs
 	var limit = size_y/5
 	if $Foxy.position.y > limit + 10:
-		print("ouh la la ! :", $Foxy.position.y)
 		$Foxy.position.y = limit + 5
 

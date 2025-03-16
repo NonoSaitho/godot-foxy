@@ -17,7 +17,7 @@ func start():
 	GlobalScene.pausable = true
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_select") or event.is_action_pressed("ui_accept"):
 		start()
 	elif event.is_action_pressed("ui_home"):
 		get_tree().quit()

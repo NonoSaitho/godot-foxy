@@ -275,7 +275,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
 animation = "juggling"
-frame = 1
+frame = 3
 playing = true
 
 [node name="throw_ball" type="AudioStreamPlayer" parent="."]
@@ -316,3 +316,11 @@ playing = true
 
 [node name="grunt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
+
+[node name="give" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -9, -1 )
+frames = SubResource( 66 )
+animation = "Ice"
+playing = true
+flip_h = true
